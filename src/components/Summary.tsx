@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import type { PlacedGoal } from '../types/types';
-import { Download, Calendar, Smartphone, Rocket, Globe, Twitter, Instagram, Linkedin, Mail, CheckCircle, Smartphone as SmartphoneIcon, Loader2 } from 'lucide-react';
+import { Download, Calendar, Rocket, Instagram, Mail, CheckCircle, Smartphone as SmartphoneIcon, Loader2 } from 'lucide-react';
 import html2canvas from 'html2canvas-pro';
 import { generateICS } from '../services/icsService';
 
