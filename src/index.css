@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  /* Define font family */
+  --font-sans: 'Inter', sans-serif;
+
+  /* Define custom animations */
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.9) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  --animate-pop-in: popIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+/* 
+  Enable class-based dark mode manually.
+  This allows the .dark class on your App div to trigger dark variants.
+*/
+@variant dark (&:where(.dark, .dark *));
+
+/* Global Styles */
+body {
+  font-family: var(--font-sans);
+  overflow: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  background: #a1a1aa; 
+  border-radius: 4px;
+}
+/* Using the dark variant we defined above */
+.dark ::-webkit-scrollbar-thumb {
+  background: #3f3f46; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #71717a; 
+}
+
+/* Dots Pattern Logic */
+.dots-pattern {
+  background-image: radial-gradient(#27272a 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Target when .dark is NOT present on a parent */
+:not(.dark) .dots-pattern {
+  background-image: radial-gradient(#e4e4e7 1px, transparent 1px);
+}
+
