@@ -1,5 +1,4 @@
 import type { PlacedGoal} from '../types/types';
-import { MONTHS } from '../types/types';
 
 
 export const generateICS = (goals: PlacedGoal[], userName: string) => {

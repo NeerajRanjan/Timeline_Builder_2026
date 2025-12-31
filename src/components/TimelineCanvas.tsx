@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { MONTHS } from '../types/types';
 import type { PlacedGoal, GoalItem } from '../types/types';
-import { Calendar, Trash2, Edit2, Check, ChevronDown, ChevronUp } from 'lucide-react';
+import { Trash2, Edit2, Check, ChevronUp } from 'lucide-react';
 
 interface TimelineCanvasProps {
   placedGoals: PlacedGoal[];
