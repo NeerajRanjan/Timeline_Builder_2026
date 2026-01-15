@@ -52,9 +52,11 @@
     ```
 
 3.  Set up environment variables:
-    Create a `.env.local` file in the root directory and add your Google Gemini API Key:
+    Create a `.env.local` file in the root directory and add your keys. You need the Google Gemini API Key for AI features, and the Google Apps Script URL/Token for the email accountability feature.
     ```env
     VITE_GEMINI_API_KEY=your_api_key_here
+    VITE_GSHEET_URL=https://script.google.com/macros/s/deployment_id/exec
+    VITE_GSHEET_TOKEN=your_secret_token_matching_script
     ```
 
 4.  Start the development server:
@@ -71,3 +73,6 @@
 5.  **Finish & Generate**: Click "Finish" to let Gemini AI analyze your year and generate a detailed plan.
 6.  **Export**: Download your comprehensive plan or export it to your calendar.
 
+## License
+
+MIT
