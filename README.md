@@ -1,73 +1,73 @@
-# React + TypeScript + Vite
+# 2026 Timeline Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Make time visible.** Build your perfect 2026. Drag, drop, and let AI structure your success.
 
-Currently, two official plugins are available:
+![Project Preview](public/preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## React Compiler
+2026 Timeline Builder is a modern, interactive React application designed to help you visualize and plan your goals for the year 2026. With a seamless drag-and-drop interface and AI-powered scheduling, it transforms abstract resolutions into a concrete, actionable timeline.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- **Interactive Builder**: intuitive drag-and-drop interface to place goals across the months of 2026.
+- **AI-Powered Scheduling**: Uses **Google Gemini** to analyze your timeline and provide specific actionable suggestions, frequency recommendations, and motivational quotes.
+- **Smart Formatting**: Automatically handles goal conflicts and layout.
+- **Undo/Redo**: Full history support to experiment with your timeline fearlessly.
+- **Dark/Light Mode**: Beautifully designed themes for any time of day.
+- **Export to Calendar**: Generate `.ics` files to import your plan directly into Google Calendar, Outlook, or Apple Calendar.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Framework**: [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **AI Integration**: [Google GenAI SDK](https://www.npmjs.com/package/@google/genai)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Utilities**: `html2canvas-pro` (for image generation)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+> [!NOTE]
+> This project uses **Tailwind CSS v4**. Ensure your editor plugins are updated for v4 support.
+>
+> It also uses **`html2canvas-pro`** instead of the standard `html2canvas` package to ensure better compatibility with modern CSS features.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Getting Started
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Prerequisites
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Node.js (v18 or higher recommended)
+- A Google Cloud Project with the **Gemini API** enabled.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/timeline_builder_2026.git
+    cd timeline_builder_2026
+    ```
+
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3.  Set up environment variables:
+    Create a `.env.local` file in the root directory and add your Google Gemini API Key:
+    ```env
+    VITE_GEMINI_API_KEY=your_api_key_here
+    ```
+
+4.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+
+## Usage
+
+1.  **Enter your name**: Start by personalizing your session.
+2.  **Drag Goals**: Drag predefined goals from the sidebar onto the timeline.
+3.  **Custom Goals**: Create your own custom goals if they aren't in the list.
+4.  **Organize**: Move goals between months. Use Undo/Redo if you change your mind.
+5.  **Finish & Generate**: Click "Finish" to let Gemini AI analyze your year and generate a detailed plan.
+6.  **Export**: Download your comprehensive plan or export it to your calendar.
+
